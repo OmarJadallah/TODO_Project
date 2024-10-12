@@ -12,9 +12,9 @@ namespace Entities
         public string TaskName { get; set; } = string.Empty;
 
         [StringLength(300)]
-        public string TaskDescription { get; set; } = string.Empty;
+        public string? TaskDescription { get; set; } = string.Empty;
         public DateTime TaskCreateDate { get; set; }
-        public DateTime TaskDueDate { get; set; }
+        public DateTime? TaskDueDate { get; set; }
 
         [StringLength(10)]
         public string TaskStatus { get; set; } = "Working";

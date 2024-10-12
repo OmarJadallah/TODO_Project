@@ -1,4 +1,5 @@
 ﻿
+using Entities;
 using ServiceContract.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
@@ -25,16 +26,18 @@ namespace ServiceContract.DTO
         public Guid TaskTagID { get; set;} = Guid.Empty;
 
 
-        public TaskResponse ToTaskResponse()
+
+
+        public clsTask ToTask()
         {
-            return new TaskResponse
+            return new clsTask()
             {
                 TaskName = this.TaskName,
                 TaskDescription = this.TaskDescription,
                 TaskCreateDate = this.TaskCreateDate,
                 TaskDueDate = this.TaskDueDate,
-                TaskStatus = this.TaskStatus ,
-                TaskPriority = this.TaskPriority,
+                TaskStatus = this.TaskStatus.ToString(),
+                TaskPriority = this.TaskPriority.ToString(),
                 TaskTagID = this.TaskTagID
             };
         }

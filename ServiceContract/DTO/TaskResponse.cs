@@ -29,22 +29,6 @@ namespace ServiceContract.DTO
 
         public Guid TaskTagID { get; set; } = Guid.Empty;
         
-        private readonly ITagService? _tagService;
-
-        public TaskResponse(ITagService tagService)
-        {
-            _tagService = tagService;
-        }
-
-        public TagDTO? getTagInfoFromTask()
-        {
-            if (TaskTagID == Guid.Empty)
-                return null;
-
-            TagDTO? tag = _tagService.GetTag(TaskTagID);
-
-            return tag;
-        }
 
     }
 
